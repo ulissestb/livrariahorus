@@ -1,0 +1,20 @@
+
+#login{
+    float: right;
+}
+#cabecalho{
+    text-align: center;
+    margin: 20px;
+}
+#livro{
+    float: right;
+}
+#cadastrar{
+   margin: 10px; 
+   
+   text-align: center;
+}
+
+#btncadastrar:hover{
+    border-color: black;
+}
