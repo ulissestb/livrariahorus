@@ -36,7 +36,7 @@
     
     
 <div id="cadastro" style="margin: 100px; margin-top: 0px;">
-    <form class="form-group" action="php.php" method="post">
+    <form class="form-group" action="config/post.php" method="post">
         <h3>Cadastro</h3>
         <div class="container">
             <div class="row">
