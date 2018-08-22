@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
 </head> 
 
 <body>
@@ -19,7 +20,7 @@
                 <a href="cadastro.php">Cadastrar</a>
             </div>
 
-        <div id="logo"><img src="css/img/LogoLivrariaHorus.png"></div>
+        <div id="logo"><img src="img/LogoLivraria.png"></div>
         </div>
     </header>
     
@@ -28,7 +29,7 @@
     <nav id="navbar" class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php">Horus</a>
     <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="#">Livros</a>
+    <a class="navbar-brand" href="livros.php">Livros</a>
     <a class="navbar-brand" href="contato.php">Contatos</a>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -37,7 +38,7 @@
     </nav>
     <!--FIM DA BARRA DE NAVEGAÇÃO-->
     
-   <!-- inicio contigo contato by: Pedrin -->
+   <!-- inicio condigo contato by: Pedrin -->
 
     <div id="contat" class="container">
         <div id="dadoslivraria"> 
@@ -70,8 +71,6 @@
 <!--Código do Rodapé -->
 
 </div>
-    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
-    
 </body>
 
 </html>

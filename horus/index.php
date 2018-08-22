@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
     <title>Livraria Horus</title>
 </head>
 <body>
@@ -28,9 +28,8 @@
     <nav id="navbar" class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php">Horus</a>
     <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="#">Livros</a>
-    <a class="navbar-brand" href="#">Quem somos</a>
-    <a class="navbar-brand" href="#">Localização</a>
+    <a class="navbar-brand" href="livos.php">Livros</a>
+    <a class="navbar-brand" href="contato.php">Contato</a>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-warning my-2 my-sm-0" type="submit">Procurar</button>

@@ -1,0 +1,59 @@
+/*Inicio Estilo Menu */
+#login{
+    float: right;
+}
+
+#cabecalho{
+    text-align: center;
+    
+}
+
+#livro{
+    float: right;
+}
+
+#cadastrar{
+   margin: 10px; 
+   
+   text-align: center;
+}
+
+#btncadastrar:hover{
+    border-color: black;
+}
+/*Fim Estilo Menu */
+
+
+/*
+  Inicio Estilo contato
+*/
+#dadoslivraria{
+    
+    float:left;
+}
+
+
+#dadoslivraria{
+    float: left;
+    width: 600px;
+}
+#contatenos{
+    float: right;
+}
+#contat{
+    margin-top: 25px;
+}
+
+#logo img{
+    max-width:250px;
+    max-height:180px;
+    width: auto;
+    height: auto;
+}
+/* Fim estilo contato*/
+
+
+/*Estilo pagina Livros */
+
+
+/*Fim pagina Livros*/
