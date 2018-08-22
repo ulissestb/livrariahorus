@@ -1,38 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" lang="pt-br">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-</head>  
-<body>
-<div id="total">
-    <header id="logcad">
-        <div id="cabecalho">
-            <div id="login">
-                <a href="login.php">Entrar  |</a>
-                <a href="cadastrar.php">Cadastrar</a>
-            </div>
-
-            <h1>Livraria Horus</h1>
-        </div>
-    </header>
-    
-
-    <!--BARRA DE NAVEGAÇÃO -->
-    <nav id="navbar" class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.php">Horus</a>
-    <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="#">Livros</a>
-    <a class="navbar-brand" href="#">Quem somos</a>
-    <a class="navbar-brand" href="#">Localização</a>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-warning my-2 my-sm-0" type="submit">Procurar</button>
-    </form>
-    </nav>
-    <!--FIM DA BARRA DE NAVEGAÇÃO-->
+<?php include('header.html') ?>
     
     
 <div id="cadastro" style="margin: 100px; margin-top: 0px;">
