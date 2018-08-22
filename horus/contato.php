@@ -16,7 +16,7 @@
         <div id="cabecalho">
             <div id="login">
                 <a href="login.php">Entrar  |</a>
-                <a href="cadastro.php">Cadastrar</a>
+                <a href="cadastrar.php">Cadastrar</a>
             </div>
 
         <div id="logo"><img src="css/img/LogoLivrariaHorus.png"></div>
