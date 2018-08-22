@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="bootstrap.js"></script>
     <title>Livraria Horus</title>
 </head>
 <body>
@@ -28,8 +28,9 @@
     <nav id="navbar" class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php">Horus</a>
     <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="livos.php">Livros</a>
-    <a class="navbar-brand" href="contato.php">Contato</a>
+    <a class="navbar-brand" href="#">Livros</a>
+    <a class="navbar-brand" href="#">Quem somos</a>
+    <a class="navbar-brand" href="#">Localização</a>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-warning my-2 my-sm-0" type="submit">Procurar</button>
@@ -38,17 +39,27 @@
     <!--FIM DA BARRA DE NAVEGAÇÃO-->
 
     <div class="container">
-    
-        <div id="banner">
-            <h1>aqui vai o banner</h1>
-        </div>
 
-        <div id="video">
-            <h1>aqui video</h1>
-        </div>
-        <div id="livro">
-            <h1>aqui vai o livro</h1>
-        </div>
-    </div>
-</body>
-</html>
+
+   
+   <!--  AQUI COMEÇA MEU CODIGO BY; NILO-->
+   
+   <div style="margin: 100px; margin-top: 0px;">
+    <h3>Página de Login</h3>
+    <form clas="form-group" method="post" action="autenticacao.php">
+        <label>Login:</label><br>
+        <input type="text" placeholder="Ex. Nilo" class="form-control">
+        <label>Senha:</label>
+        <input type="password" class="form-control"><br><br>
+        <input type="submit" class="btn btn-success" value="Entrar">
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
