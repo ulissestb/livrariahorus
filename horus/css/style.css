@@ -21,24 +21,44 @@
 #btncadastrar:hover{
     border-color: black;
 }
-/*Fim Estilo Menu */
+/*Fim Estilo Menu nav */
 
 
-/*
-  Inicio Estilo contato
-*/
-#dadoslivraria{
-    
-    float:left;
-}
-
-
+/* <=====Index estilo========> */
 #dadoslivraria{
     float: left;
-    width: 600px;
+    width: 500px;
 }
+
+#banner{
+    margin-top: 30px;
+    width: 600px;
+    float:right;
+    
+}
+#quadro1 img{
+    width: 400px;
+    height:400px;
+    float:left;
+    clear: both;
+}
+
+#quadro2 img{
+    width: 400px;
+    height:400px;
+    float:right;
+    
+}
+
+/* <========Fim estilo index=========>*/
+
+
+
+
+/* Inicio Estilo contato*/
 #contatenos{
     float: right;
+    margin: 0 0 0 10px;
 }
 #contat{
     margin-top: 25px;
@@ -50,9 +70,25 @@
     width: auto;
     height: auto;
 }
+
+#maps{
+    float: left;
+    padding: 0;
+}
+
+footer{
+    clear: both;
+    background: black;
+    text-align: center;
+    text-decoration-color: white;
+    color: white;
+        
+}
 /* Fim estilo contato*/
 
-teste 
+
+
+
 /*Estilo pagina Livros */
 
 

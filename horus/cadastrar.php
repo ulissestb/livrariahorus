@@ -1,6 +1,6 @@
 <?php include('header.html') ?>
     
-    
+    <div class="container" >
 <div id="cadastro" style="margin: 100px; margin-top: 0px;">
     <form class="form-group" action="config/post.php" method="post">
         <h3>Cadastro</h3>
@@ -37,14 +37,8 @@
     </form>
 </div>
 
-    
+</div>
     
 
 <!--Código do Rodapé -->
-
-
-
-</div>
-    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
-</body>
-</html>
+<?php include('footer.html')?>
