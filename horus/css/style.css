@@ -1,4 +1,5 @@
 /*Inicio Estilo Menu */
+
 #login{
     float: right;
 }
@@ -78,10 +79,9 @@
 
 footer{
     clear: both;
-    background: black;
+    background: #abbbd6;
     text-align: center;
-    text-decoration-color: white;
-    color: white;
+    color: #344056;
         
 }
 /* Fim estilo contato*/

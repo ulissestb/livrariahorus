@@ -24,7 +24,7 @@
             </div>
             <div class="col-md-6">  
             Celular<br>
-            <input type="number" class="form-control" name="celular"><br>
+            <input type="text" class="form-control" name="celular" id="celular"><br>
            </div>
             </div>
             Email<br>
