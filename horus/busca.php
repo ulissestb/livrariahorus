@@ -7,11 +7,11 @@
  
 
 
-
+</div>
 <!-- FIM CÓDIGO Livros PEDRIN -->
 
 
 
 
 <!--Código do Rodapé -->  
-</div>
+<? include('footer')?>

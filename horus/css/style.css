@@ -91,5 +91,19 @@ footer{
 
 /*Estilo pagina Livros */
 
+#espaco-livro{
+    background-color: rgba(248, 250, 235, 0.966);
+    width: 350px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 3px;
+    clear: both;
+    height: 300px;
+}
+#espaco-livro img{
+    width: 150px;
+    margin: 10px;
+    float: left;
+}
 
 /*Fim pagina Livros*/
