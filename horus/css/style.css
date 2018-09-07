@@ -6,6 +6,7 @@
 
 #cabecalho{
     text-align: center;
+
     
 }
 
@@ -87,7 +88,10 @@ footer{
 /* Fim estilo contato*/
 
 
-
+#img-slide{
+    width: 710px;
+    height: 510px;
+}
 
 /*Estilo pagina Livros */
 
@@ -100,10 +104,13 @@ footer{
     clear: both;
     height: 300px;
 }
+
 #espaco-livro img{
     width: 150px;
     margin: 10px;
     float: left;
 }
-
+#carousel-slide{
+  align-content: center;
+}
 /*Fim pagina Livros*/
