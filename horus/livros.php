@@ -293,12 +293,12 @@
 
  
  
-
+ </div>
   <!--Código do Rodapé -->
 
-<?php include('footer.html') ?><script>
+<?php include('footer.html') ?>
+  <script>
             $(document).ready(function(){
                 $('.owl-carousel').owlCarousel();
             });
     </script>
-  </div>

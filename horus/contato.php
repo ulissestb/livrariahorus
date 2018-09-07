@@ -24,16 +24,14 @@
                     
  </div>
                
-               teste
+       
+
             
             
-            <div id="maps">
+            <div id="maps"><p>Encontre-nos pelo mapa do Google!</p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d649.6690700266387!2d-43.178069410129666!3d-22.910300416957494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f617253589d%3A0x5f6866346e1dde3!2sLivraria+Horus!5e0!3m2!1spt-BR!2sbr!4v1535154970119" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>            </div>
         
-        
-        
-        
-        
+
     </div>
     
      <!-- Modal -->
