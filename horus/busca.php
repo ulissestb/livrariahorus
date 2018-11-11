@@ -1,4 +1,4 @@
-<?php include('header.html') ?>
+<?php include('header.php') ?>
     
 <!-- inicio codigo Livros by: Pedrin -->
 <div class="container">
@@ -14,4 +14,4 @@
 
 
 <!--Código do Rodapé -->  
-<? include('footer')?>
+<? include('footer.php')?>

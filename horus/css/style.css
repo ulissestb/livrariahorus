@@ -1,13 +1,20 @@
 /*Inicio Estilo Menu */
 
+
+body{
+    background-color: aliceblue;
+}
 #login{
-    float: right;
+    text-align: right;
+    margin: 15px;
+    height: 10px;
+
 }
 
 #cabecalho{
     text-align: center;
 
-    
+
 }
 
 #livro{
@@ -15,28 +22,55 @@
 }
 
 #cadastrar{
-   margin: 10px; 
-   
+   margin: 10px;
+
    text-align: center;
 }
-
+#logo{
+    text-align: center;
+}
 #btncadastrar:hover{
     border-color: black;
 }
 /*Fim Estilo Menu nav */
 
+.books-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: inline;
+}
+.books-grid li {
+  padding: 10px 15px;
+  text-align: left;
+ float: left;
+}
 /* <=====Index estilo========> */
+
+.container{
+}
+
+
+
 #dadoslivraria{
+
     float: left;
     width: 500px;
 }
-
 #banner{
-    margin-top: 30px;
+    margin: 10px;
+    margin: 0%;
+}
+#banner img{
+    padding-bottom: 5px;
+    margin-top: 8px;
     width: 600px;
     float:right;
-    
+
 }
 #quadro1 img{
     width: 400px;
@@ -49,7 +83,7 @@
     width: 400px;
     height:400px;
     float:right;
-    
+
 }
 
 /* <========Fim estilo index=========>*/
@@ -67,10 +101,8 @@
 }
 
 #logo img{
-    max-width:250px;
-    max-height:180px;
-    width: auto;
-    height: auto;
+  width: 330px;
+  height: 175px;
 }
 
 #maps{
@@ -80,10 +112,19 @@
 
 footer{
     clear: both;
+    margin: 15px;
+    background-color: aliceblue;
     background: #abbbd6;
     text-align: center;
     color: #344056;
-        
+
+}
+#redes-sociais{
+    text-align: center;
+    margin: 15px;
+}
+p{
+    margin-bottom: 0px;
 }
 /* Fim estilo contato*/
 
@@ -103,6 +144,7 @@ footer{
     margin: 3px;
     clear: both;
     height: 300px;
+    float:left;
 }
 
 #espaco-livro img{

@@ -1,4 +1,4 @@
-<?php include('header.html') ?>
+<?php include('header.php') ?>
     
    <!-- inicio condigo contato by: Pedrin -->
 
@@ -6,7 +6,7 @@
         
           <div class="form-group" id="contatenos">
           
-          <h3>Entre contato com a gente!!!</h3>
+          <h3>Entre em contato com a gente!!!</h3>
              Rua Senador Dantas 75 sala 303
              Centro 20031-914 
              (21) 2533-3638<br>
@@ -50,7 +50,7 @@
           <div class="modal-body">
             
               <div class="form-group">
-                  <form action="recebform.php" method="POST">
+                  <form action="mailto:livrariahorus@gmail.com" method="POST" enctype="text/plain">
                  Nome:<input type="text" name="nome" class="form-control"><br>
                  Email:<input type="email" name="email" class="form-control"><br>
                  Estado civíl:<select name="estcivil" class="form-control">
@@ -61,27 +61,30 @@
                  </select><br>
 
             Sexo:<br><input type="radio" name="sexo" value="Masc.">Masculino
-                <input type="radio" name="sexo" value="Fem.">Masculino<br>
-            
-                Nível de satisfarção:<input type="range" name="urg" minlength="0" maxlength="10" step="1" class="form-control"><br>
-            Mensagem<input type="text" name="msg"  class="form-control" row="10">
+                <input type="radio" name="sexo" value="Fem.">Femenino<br>
+                <div class="form-group">
+                            <label for="curg">Nível de satisfação:</label>
+                            <div class="form-inline">
+                                <span class="pr-2">Min</span>
+                                <input type="range" class="form-control" name="urg" id="cURG" min="0" max="10" step="1" style="width: 300px;">
+                                <span class="pl-2">Max</span>
+                            </div>
+                        </div><br>
+                Mensagem<input type="text" name="msg"  class="form-control" row="10">
 
-            
-             
+                              
               
-              
-              
-              
-              
-          </div>
-          <div class="modal-footer">
+            <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <input type="submit" class="btn btn-primary" value="Enviar">
+            
+        </div>
+         </form>
           </div>
         </div>
       </div>
+        </div>
       
-      </div>
    
 <!-- FIM CÓDIGO CONTATO PEDRIN -->
    
@@ -89,6 +92,4 @@
 
 </div>
 
-<?php include('footer.html') ?>
-
-
+<?php include('footer.php') ?>

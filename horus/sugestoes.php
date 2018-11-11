@@ -1,4 +1,4 @@
-<?php include('header.html') ?>
+<?php include('header.php') ?>
 
 
 <!--aqui começa novo form sugestoes-->

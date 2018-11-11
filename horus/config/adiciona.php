@@ -1,29 +1,28 @@
 <?php
 
+
+
+$nomedolivro = $_POST['nomedolivro'];
+$autor    = $_POST['autor'];
+$editora  = $_POST['editora'];
+$anolivro = $_POST['anolivro'];
+$preco    = $_POST['preco'];
+$genero   = $_POST['genero'];
+$descricao = $_POST['descricao'];
+$imagem = $_POST['imagem'];
+
+
 include('Sql.php');
 
-$nomeDoLivro = $_POST['nomedolivro'];
-$autor = $_POST['autor'];
-$editora = $_POST['editora'];
-$dataLivro = $_POST['datalivro'];
-$preco = $_POST['preco'];
-$descricao = $_POST['descricao'];
+$inser = "INSERT INTO livros(genero, editora, titulo, autor, preco, descricao, anoLivro, imagem)
+ VALUES ('{$genero}','{$editora}','{$nomedolivro}','{$autor}','{$preco}','{$descricao}', '{$anolivro}', '{$imagem}')";
 
-
-
-$insert = "INSERT INTO livro(autor, nomelivro, descricao, anolivro,editora, preco) VALUES ('{$autor}','{$nomeDoLivro}','{$descricao}','{$dataLivro}','{$editora}','{$preco}')";
-
-mysqli_query($conn, $insert);
+mysqli_query($conn, $inser);
 
 mysqli_close($conn);
 
-$dados = array(
-    'Nome do Livro'=>$nomeDoLivro,
-    'Autor'=>$autor,
-    'Editora'=>$editora,
-    'Data do Livro'=>$dataLivro,
-    'Preço'=>$preco,
-    'Descrição'=>$descricao
-);
-
-echo json_encode($dados);
+?>
+<a href="admin_adicionarlivros.php">Adicionar mais Livros</a>
+<a href="index.php">Ir para menu</a>
+<p class="alert-success">Adicionado com sucesso!</p>
+<?php ?>

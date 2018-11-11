@@ -1,22 +1,38 @@
 <?php
-$nome           = $_POST['nome'];
-$sobrenome      = $_POST['sobrenome'];
-$datanascimento = $_POST['datanascimento'];
-$celular        = $_POST['celular'];
-$email          = $_POST['email'];
 
-$nomeTodo = $nome ." ". $sobrenome;
+$nomecompleto     = $_POST['nomecompleto'];
+$user             = $_POST['user'];
+$datanascimento   = $_POST['datanascimento'];
+$celular          = $_POST['celular'];
+$senha            = $_POST['senha'];
+$confisenha       = $_POST['confisenha'];
+$email            = $_POST['email'];
 
-include('Sql.php');
 
-$dados = "INSERT INTO cliente(telefone, nome ,data, email) VALUES ('{$celular}','{$nomeTodo}','{$datanascimento}','{$email}')";
-    
-mysqli_query($conn,$dados); 
+include('funcoes.php');
 
-mysqli_close($conn);
-        
+//Funções de verificação
+verifcalogin($user);
+verificarSenha($senha, $confisenha);
+
+$senhamd5 = md5($confisenha);
+
+
+$queryUser = "SELECT * FROM cliente WHERE usuario = '{$user}'";
+$resultUser = mysqli_query($conn, $queryUser);
+
+if(mysqli_num_rows($resultUser) == 0){
+    include('Sql.php');
+
+    $dados = "INSERT INTO cliente(usuario, email, telefone, nome, senha, datanascimento) VALUES('{$user}','{$email}','{$celular}','{$nomecompleto}','{$senhamd5}','{$datanascimento}')";
+
+    mysqli_query($conn,$dados);
+
+    mysqli_close($conn);
+
+    echo "Cadastro feito com sucesso!";
+
+}
+
 ?>
-
-
-
-<a href="../cadastrar.php">Voltar</a>
+<a href="../index.php">Voltar para a pagina inicial</a>

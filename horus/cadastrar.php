@@ -1,4 +1,5 @@
-<?php include('header.html') ?>
+
+   <?php include('header.php') ?>
     
     <div class="container" >
         <div id="cadastro" style="margin: 100px; margin-top: 0px;">
@@ -8,13 +9,13 @@
                     <div class="row">
                     
                     <div class="col-md-6">
-                    Nome<br>
-                    <input type="text" class="form-control" name="nome"><br>
+                    Nome Completo<br>
+                    <input type="text" class="form-control" name="nomecompleto"><br>
                 
                     </div>
                     <div class="col-md-6">
-                    Sobrenome<br>
-                    <input type="text" class="form-control" name="sobrenome"><br>
+                    Nome de Usuário<br>
+                    <input type="text" class="form-control" name="user"><br>
                     </div>
                     </div>
                     <div class="row">
@@ -29,6 +30,17 @@
                     </div>
                     Email<br>
                     <input type="email" class="form-control" name="email"><br>
+                    
+                      <div class ="row">
+                    <div class="col-md-6">
+                    Senha<br>
+                    <input type="password" class="form-control" name="senha"><br>
+                    </div>
+                    <div class="col-md-6">
+                    Confirme a senha<br>
+                    <input type="password" class="form-control" name="confisenha"><br>
+                    </div>
+                    </div>
 
                     <input type="checkbox">  Li e concordo. <br>
                     <input type="checkbox" >  Receber novidades por e-mail.<br><br>
@@ -41,4 +53,4 @@
     
 
 <!--Código do Rodapé -->
-<?php include('footer.html')?>
+<?php include('footer.php')?>
