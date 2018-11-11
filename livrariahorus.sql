@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Ago-2018 às 00:51
--- Versão do servidor: 10.1.28-MariaDB
--- PHP Version: 5.6.32
+-- Generation Time: 10-Nov-2018 às 16:09
+-- Versão do servidor: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,37 +25,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cadastra`
---
-
-CREATE TABLE `cadastra` (
-  `idfuncionario` int(11) DEFAULT NULL,
-  `idlivro` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `cadastro`
---
-
-CREATE TABLE `cadastro` (
-  `idfuncionario` int(11) DEFAULT NULL,
-  `idlivro` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `cliente`
 --
 
 CREATE TABLE `cliente` (
-  `codcli` int(11) NOT NULL,
-  `telefone` char(11) NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `usuario` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `telefone` char(15) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `data` date NOT NULL,
-  `email` varchar(255) NOT NULL
+  `senha` varchar(32) NOT NULL,
+  `datanascimento` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`idCliente`, `usuario`, `email`, `telefone`, `nome`, `senha`, `datanascimento`) VALUES
+(2, 'ulissestb', 'ulisses.melo.nascimento@gmail.com', '(21) 97921-870', 'Ulisses Melo', '202cb962ac59075b964b07152d234b70', '1994-06-04'),
+(3, 'crist.lexi', 'alexia@gmail.com', '(21) 7070-7070', 'Alexia Cristina', 'fe9b92de6cce66e92e151de40d528adb', '1995-01-16'),
+(4, 'sougay', 'viadinho20comer@gmail.com', '(21) 8979-9855', 'pedro capeta', '202cb962ac59075b964b07152d234b70', '2225-01-01'),
+(5, 'sougay', 'viadinho20comer@gmail.com', '(21) 8979-9855', 'pedro capeta', '202cb962ac59075b964b07152d234b70', '2225-01-01');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `compra`
+--
+
+CREATE TABLE `compra` (
+  `dataCompra` date NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `idLivro` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -66,67 +68,53 @@ CREATE TABLE `cliente` (
 
 CREATE TABLE `funcionario` (
   `idfuncionario` int(11) NOT NULL,
-  `cpf` varchar(11) NOT NULL,
-  `cargo` varchar(30) NOT NULL,
-  `data` date NOT NULL,
-  `telefone` int(11) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `endereco` varchar(500) DEFAULT NULL
+  `nome` varchar(255) NOT NULL,
+  `dataNascimento` date NOT NULL,
+  `cpf` char(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `livro`
+-- Estrutura da tabela `livros`
 --
 
-CREATE TABLE `livro` (
-  `idlivro` int(11) NOT NULL,
+CREATE TABLE `livros` (
+  `idLivro` int(11) NOT NULL,
+  `genero` varchar(255) NOT NULL,
+  `editora` varchar(255) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
   `autor` varchar(255) NOT NULL,
-  `estante` varchar(255) NOT NULL,
-  `nomelivro` varchar(255) NOT NULL,
-  `descricao` varchar(255) DEFAULT NULL,
-  `anolivro` date DEFAULT NULL,
-  `editora` varchar(250) DEFAULT NULL,
-  `preco` double NOT NULL
+  `preco` double NOT NULL,
+  `descricao` text NOT NULL,
+  `anoLivro` char(4) NOT NULL,
+  `imagem` mediumblob
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Estrutura da tabela `solicita`
+-- Extraindo dados da tabela `livros`
 --
 
-CREATE TABLE `solicita` (
-  `datapedido` date NOT NULL,
-  `numpedido` int(11) NOT NULL,
-  `codcli` int(11) DEFAULT NULL,
-  `idlivro` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `livros` (`idLivro`, `genero`, `editora`, `titulo`, `autor`, `preco`, `descricao`, `anoLivro`, `imagem`) VALUES
+(1, 'outros', 'teste', 'teste', 'teste', 22, 'teste\r\n                    ', 'test', 0x4470735553326258634141586f51672e6a7067),
+(2, 'esoterismo', 'teste2', 'teste2', 'teste2', 23, 'teste2\r\n                    ', 'test', 0x44707355546f6a58344141724235572e6a7067);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `cadastra`
---
-ALTER TABLE `cadastra`
-  ADD KEY `idfuncionario` (`idfuncionario`),
-  ADD KEY `idlivro` (`idlivro`);
-
---
--- Indexes for table `cadastro`
---
-ALTER TABLE `cadastro`
-  ADD KEY `idfuncionario` (`idfuncionario`),
-  ADD KEY `idlivro` (`idlivro`);
-
---
 -- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`codcli`);
+  ADD PRIMARY KEY (`idCliente`);
+
+--
+-- Indexes for table `compra`
+--
+ALTER TABLE `compra`
+  ADD KEY `idCliente` (`idCliente`),
+  ADD KEY `idLivro` (`idLivro`);
 
 --
 -- Indexes for table `funcionario`
@@ -135,17 +123,10 @@ ALTER TABLE `funcionario`
   ADD PRIMARY KEY (`idfuncionario`);
 
 --
--- Indexes for table `livro`
+-- Indexes for table `livros`
 --
-ALTER TABLE `livro`
-  ADD PRIMARY KEY (`idlivro`);
-
---
--- Indexes for table `solicita`
---
-ALTER TABLE `solicita`
-  ADD KEY `codcli` (`codcli`),
-  ADD KEY `idlivro` (`idlivro`);
+ALTER TABLE `livros`
+  ADD PRIMARY KEY (`idLivro`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -155,7 +136,7 @@ ALTER TABLE `solicita`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `codcli` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `funcionario`
@@ -164,35 +145,21 @@ ALTER TABLE `funcionario`
   MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `livro`
+-- AUTO_INCREMENT for table `livros`
 --
-ALTER TABLE `livro`
-  MODIFY `idlivro` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `livros`
+  MODIFY `idLivro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `cadastra`
+-- Limitadores para a tabela `compra`
 --
-ALTER TABLE `cadastra`
-  ADD CONSTRAINT `cadastra_ibfk_1` FOREIGN KEY (`idfuncionario`) REFERENCES `funcionario` (`idfuncionario`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `cadastra_ibfk_2` FOREIGN KEY (`idlivro`) REFERENCES `livro` (`idlivro`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Limitadores para a tabela `cadastro`
---
-ALTER TABLE `cadastro`
-  ADD CONSTRAINT `cadastro_ibfk_1` FOREIGN KEY (`idfuncionario`) REFERENCES `funcionario` (`idfuncionario`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `cadastro_ibfk_2` FOREIGN KEY (`idlivro`) REFERENCES `livro` (`idlivro`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Limitadores para a tabela `solicita`
---
-ALTER TABLE `solicita`
-  ADD CONSTRAINT `solicita_ibfk_1` FOREIGN KEY (`codcli`) REFERENCES `cliente` (`codcli`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `solicita_ibfk_2` FOREIGN KEY (`idlivro`) REFERENCES `livro` (`idlivro`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `compra`
+  ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`idLivro`) REFERENCES `livros` (`idLivro`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
