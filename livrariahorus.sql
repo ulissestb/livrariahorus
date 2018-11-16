@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10-Nov-2018 às 16:09
--- Versão do servidor: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Generation Time: 16-Nov-2018 às 01:12
+-- Versão do servidor: 10.1.36-MariaDB
+-- versão do PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,16 +38,6 @@ CREATE TABLE `cliente` (
   `datanascimento` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `cliente`
---
-
-INSERT INTO `cliente` (`idCliente`, `usuario`, `email`, `telefone`, `nome`, `senha`, `datanascimento`) VALUES
-(2, 'ulissestb', 'ulisses.melo.nascimento@gmail.com', '(21) 97921-870', 'Ulisses Melo', '202cb962ac59075b964b07152d234b70', '1994-06-04'),
-(3, 'crist.lexi', 'alexia@gmail.com', '(21) 7070-7070', 'Alexia Cristina', 'fe9b92de6cce66e92e151de40d528adb', '1995-01-16'),
-(4, 'sougay', 'viadinho20comer@gmail.com', '(21) 8979-9855', 'pedro capeta', '202cb962ac59075b964b07152d234b70', '2225-01-01'),
-(5, 'sougay', 'viadinho20comer@gmail.com', '(21) 8979-9855', 'pedro capeta', '202cb962ac59075b964b07152d234b70', '2225-01-01');
-
 -- --------------------------------------------------------
 
 --
@@ -70,8 +60,16 @@ CREATE TABLE `funcionario` (
   `idfuncionario` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `dataNascimento` date NOT NULL,
-  `cpf` char(11) NOT NULL
+  `cpf` char(11) NOT NULL,
+  `senha` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`idfuncionario`, `nome`, `dataNascimento`, `cpf`, `senha`) VALUES
+(1, 'Ulisses de Melo Nascimento', '1994-06-04', '16156776745', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -83,12 +81,12 @@ CREATE TABLE `livros` (
   `idLivro` int(11) NOT NULL,
   `genero` varchar(255) NOT NULL,
   `editora` varchar(255) NOT NULL,
-  `titulo` varchar(255) NOT NULL,
+  `titulo` varchar(50) NOT NULL,
   `autor` varchar(255) NOT NULL,
   `preco` double NOT NULL,
   `descricao` text NOT NULL,
   `anoLivro` char(4) NOT NULL,
-  `imagem` mediumblob
+  `imagem` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -96,8 +94,39 @@ CREATE TABLE `livros` (
 --
 
 INSERT INTO `livros` (`idLivro`, `genero`, `editora`, `titulo`, `autor`, `preco`, `descricao`, `anoLivro`, `imagem`) VALUES
-(1, 'outros', 'teste', 'teste', 'teste', 22, 'teste\r\n                    ', 'test', 0x4470735553326258634141586f51672e6a7067),
-(2, 'esoterismo', 'teste2', 'teste2', 'teste2', 23, 'teste2\r\n                    ', 'test', 0x44707355546f6a58344141724235572e6a7067);
+(37, 'esoterismo', 'Nova Luz', 'Yo soy la magica presencia', 'Kaint Germain', 35, 'Novo', '1994', 'yosoylamagicapresencia.jpg'),
+(38, 'esoterismo', 'RosaCruz', 'Torino', 'Luoghi Magici', 36, 'Novo', '2001', 'torino.jpg'),
+(39, 'esoterismo', 'Cia dos Livros', 'Tarot Gitano', 'Yasmin', 40, 'Novo', '2005', 'TarotGitano.jpg'),
+(40, 'esoterismo', 'Rosa Cruz', 'Prospettive di Esoterismo', 'Rosario Castello', 47, 'Novo', '1999', 'prospettivediesoterismo.jpg'),
+(41, 'esoterismo', 'Selector', 'Fantasmas espÃ­ritus y otras...', 'Eduardo', 39, 'Novo', '1993', 'fantasmasespiritus.jpg'),
+(42, 'esoterismo', 'Pensamento', 'Esoterismo e Magia no mundo ocidental', 'Roberto', 42, 'Novo', '2001', 'esoterismoemagia.jpg'),
+(43, 'esoterismo', 'Sextante', 'Esoterismo Di Dante', 'Rene Guenos', 47, 'Novo', '1995', 'esoterismodidante.jpg'),
+(44, 'esoterismo', 'InDigitale', 'Esoterismo Cristiano', 'Rene Guenon', 70, 'Novo', '1986', 'esoterismocristiano.jpg'),
+(45, 'esoterismo', 'Selector', 'Chakras', 'Naomi Ozniee', 29, 'Novo', '1990', 'Chakras.jpg'),
+(46, 'filosofia', 'Sextante', 'O ser e o nada', 'Jean Paul Sartre', 37, 'Novo', '1991', '61261.jpg'),
+(47, 'filosofia', 'Editora34', 'As tecnologias da inteligÃªncia', 'Pierre LÃ©vy', 25, 'Novo', '2000', '66937.jpg'),
+(48, 'filosofia', 'L&PM', 'Sobre a brevidade da vida', 'SÃªneca', 22, 'Novo', '2006', '5050268.jpg'),
+(49, 'filosofia', 'Companhia das letras', 'Deus um delirio', 'Richard Dawkings', 45, 'Novo', '2013', '9018277.jpg'),
+(50, 'filosofia', 'Companhia das Letras', 'O mundo assombrado pelos demÃ´nios', 'Carl Sagan', 45, 'Novo', '2000', '1407432.jpg'),
+(51, 'filosofia', 'Planeta', 'Viver em paz para morrer em paz', 'Mario Sergio Cortella', 38, 'Novo', '2009', '46534499.jpg'),
+(52, 'filosofia', 'Conhecimento', 'Em busca de nÃ³s mesmos', 'ClÃ³vis de Barros', 31, 'Novo', '2011', '46581910.jpg'),
+(53, 'Psicologia', 'Vozes', 'O corpo fala', 'Pierre Well', 65, 'Novo', '2013', '61038.jpg'),
+(54, 'Psicologia', 'Cultrix', 'Atitude Mental', 'Napoleon Hill', 49, 'Novo', '2015', '5173985.jpg'),
+(55, 'Psicologia', 'Sextante', 'Um novo mundo-o despertar...', 'Eckhart Tolle', 55, 'Novo', '2015', '2179223.jpg'),
+(56, 'Psicologia', 'L&PM', 'Amar ou Depender?', 'Walter Riso', 39, 'Novo', '2016', '5086485.jpg'),
+(57, 'Psicologia', 'Record', 'Psicopatas do cotidiano', 'Katia Mecler', 52, 'Novo', '2007', '15074763.jpg'),
+(58, 'Psicologia', 'Circulo do Livro', 'ComunicaÃ§Ã£o nÃ£o violenta', 'Marshall B. Rosenberg', 40, 'Novo', '2008', '1396068.jpg'),
+(61, 'Psicologia', 'Vozes', 'O corpo e seus sÃ­mbolos', 'Jean Yves', 48, 'Novo', '2000', '157574.jpg'),
+(62, 'Psicologia', 'MG', 'Ensaios sobre o amor e a solidÃ£o', 'Gikovate', 0, 'Novo', '2008', '1145761.jpg'),
+(63, 'Psicologia', 'Books', 'Teorias da Personalidade', 'James Fadiman', 42, 'Novo', '2005', '111098.jpg'),
+(69, 'religiao', 'Sextante', 'Jesus o maior psicÃ³logo que jÃ¡...', 'Mark W. Baker', 29, 'Novo', '2009', '800044.jpg'),
+(70, 'religiao', 'Martin Claret', 'Bhagavad Gita', 'Krishna', 23, 'Novo', '2007', '252264.jpg'),
+(71, 'religiao', 'Madras', 'O GuardiÃ£o da Meia-Noite', 'Ribens Saraceni', 55, 'Novo', '2000', '3215243.jpg'),
+(72, 'religiao', 'Record', 'A ForÃ§a-o poder dos anjos da Cabala', 'Ian Mecler', 35, 'Novo', '2007', '2738582.jpg'),
+(73, 'religiao', 'Almenara', 'Cartas de Cristo', 'Almenara', 35, 'Novo', '2000', '42272164.jpg'),
+(74, 'religiao', 'Madras', 'As sete linhas de umbanda', 'Rubens Saraceni', 47, 'Novo', '1995', '11020909.jpg'),
+(75, 'religiao', 'Alaude', 'O cÃ©rebro de buda', 'Rick Hanson', 50, 'Novo', '2005', '30140942.jpg'),
+(76, 'religiao', 'Petit', 'Violetas na janela', 'Vera Lucia', 22, 'Novo', '1994', '13098455.jpg');
 
 --
 -- Indexes for dumped tables
@@ -136,19 +165,19 @@ ALTER TABLE `livros`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `livros`
 --
 ALTER TABLE `livros`
-  MODIFY `idLivro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idLivro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- Constraints for dumped tables

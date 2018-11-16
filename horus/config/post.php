@@ -9,6 +9,7 @@ $confisenha       = $_POST['confisenha'];
 $email            = $_POST['email'];
 
 
+
 include('funcoes.php');
 
 //Funções de verificação
@@ -30,9 +31,9 @@ if(mysqli_num_rows($resultUser) == 0){
 
     mysqli_close($conn);
 
-    echo "Cadastro feito com sucesso!";
+    echo "<script>alert('Cadastro feito com sucesso!')</script>";
 
 }
 
 ?>
-<a href="../index.php">Voltar para a pagina inicial</a>
+<meta http-equiv="refresh" content="0.2; http://localhost/livrariahorus/horus/">

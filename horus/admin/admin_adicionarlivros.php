@@ -1,8 +1,9 @@
 <?php include('header-admin.html') ?>
 
+   
     <div class="container">
         <h3>Adicionar Livros ao Banco</h3>
-        <form action="../config/adiciona.php" method="post">
+        <form action="../config/addLivro.php" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
 
@@ -38,20 +39,20 @@
                     <div class="col">
                         <label>Gênero:</label></br>
                         <select class="form-control" name='genero'>
+                           <option selected disabled>Selecione o Gênero</option>
                             <option value="admin">Administração</option>
+                            <option value="autoajuda">Auto Ajuda</option>
+                            <option value='ciencias'>Ciencias Exatas</option>
+                            <option value="drama">Drama</option>
                             <option value="esoterismo">Esoterismo</option>
+                            <option value="filosofia">Filosofia</option>
+                            <option value=" literaturabrasileira">Literatura Brasileira</option>
+                            <option value="literturaestrangeira">Literatura Estrangeira</option>
                             <option value="romance">Romance</option>
                             <option value="saude">Saude</option>
-                            <option value='ciencias'>Ciencias Exatas</option>
-                            <option value="religiao">Religião</option>
                             <option value='outros'>Outros</option>
                             <option value="Psicologia">Psicologia</option>
-                            <option value="historia do brasil">Historia do Brasil</option>
-                            <option value="historia geral">Historia Geral</option>
-                            <option value=" literatura brasileira">Literatura Brasileira</option>
-                            <option value="litertura estrangeira">Literatura Estrangeira</option>
-                            <option value="auto ajuda">Auto Ajuda</option>
-                            <option value="drama">Drama</option>
+                            <option value="religiao">Religião</option>
                         </select>
                     </div>
                 </div>
@@ -60,9 +61,7 @@
                 </div>
                 <div class="col">
                     Descrição:<br>
-                    <textarea class="form-control" name="descricao" id="descricao">
-
-                    </textarea>
+                    <textarea class="form-control" name="descricao" id="descricao"></textarea>
                 </div>
 
                 <div id="cadastrar">
@@ -70,10 +69,19 @@
                 </div>
             </div>
         </form>
-
+        
+        <script>
+            $('#btncadastrar').on( "click", function() {
+            alert('Livro Adicionado');
+});
+                
+        </script>
+        
     </div>
 
      </div>
 
 
 <?php include('footer-admin.html')?>
+
+

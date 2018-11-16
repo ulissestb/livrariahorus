@@ -21,7 +21,7 @@ function verifcalogin($login){
     $queryLogin = "SELECT * FROM cliente WHERE usuario='{$login}'";
     $result = mysqli_query($conn, $queryLogin);
     if(mysqli_num_rows($result) != 0 ) {
-        echo "Esse usuário já existe.";
+        echo "<script>alert('Esse usuário já existe.');'";
     }
     mysqli_close($conn);
 }
@@ -29,10 +29,9 @@ function verifcalogin($login){
 //Função para Verificar se as senhas correspondem
 function verificarSenha($pass, $confpass){
     if ($pass != $confpass){
-    echo "senhas não conferem";
+    echo "<script>alert('senhas não conferem.');";
    }else{
     $confpass = md5($pass);
     }
-    
-}
 
+}

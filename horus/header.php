@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -29,11 +28,26 @@
     <header id="logcad">
         <div id="cabecalho">
 
+          <?php
+          session_start();
+              if($_SESSION){
+                $styleLogin = 'none';
+                $styleLogado = 'block';
+              }else{
+                $styleLogin = 'block';
+                $styleLogado = 'none';
+              }
+          ?>
 
 
-            <div id="login" >
+
+            <!-- MUDAR DISPLAY DO LOGIN PARA LOGADO, PARA SUMIR E APARECER-->
+            <div id="login" style="display:<?php echo $styleLogin; ?>" >
                 <a href="" data-toggle="modal" data-target="#exampleModal"><i class="far fa-user" ></i> Login | </a>
                 <a href="cadastrar.php">Cadastrar</a>
+            </div>
+            <div id="logado" style="display: <?php echo $styleLogado; ?>">
+                <a href="#"><i class="far fa-user" ></i> Bem-vindo <?php echo $_SESSION["user"]?> </a>
             </div>
 
             <div id="logo">
@@ -51,14 +65,17 @@
 
 <!--  DropDown de Livros separados por Gêneros-->
     <div class="dropdown show">
-      <a class="navbar-brand" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="navbar-brand" href="livros.php" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Livros
       </a>
 
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Administração</a>
-        <a class="dropdown-item" href="#">Esoterismo</a>
-        <a class="dropdown-item" href="#">Psicologia</a>
+        <a class="dropdown-item" href="esoterismo.php">Esoterismo</a>
+        <a class="dropdown-item" href="filosofia.php">Filosofia</a>
+        <a class="dropdown-item" href="psicologia.php">Psicologia</a>
+        <a class="dropdown-item" href="religiao.php">Religião</a>
+        <a class="dropdown-item" href="livros.php">Todos os livros</a>
+
       </div>
   </div>
 <!-- Fim do DropDown dos livros -->
@@ -80,7 +97,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Login:</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
